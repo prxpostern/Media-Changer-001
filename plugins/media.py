@@ -98,6 +98,13 @@ async def media(client, message):
           message_id = int(msg_id),
           media = mid
         )
+        await client.send_video(
+            chat_id = message.chat.id,
+            video = file_id,
+            duration = duration,
+            caption=message.caption
+        )    
+            
     except Exception as e:
         await message.reply_text(e)
         return
