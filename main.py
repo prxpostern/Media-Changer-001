@@ -4,9 +4,13 @@
 
 # the logging things
 import logging
-logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
 logger = logging.getLogger(__name__)
+
+logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 import os
 from pyromod import listen
@@ -19,7 +23,7 @@ else:
     from config import Config
 
 import pyrogram
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
+
 
 
 DOWNLOAD_LOCATION = "/downloads"
