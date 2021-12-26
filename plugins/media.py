@@ -46,7 +46,7 @@ async def media(client, message):
             quote=True
         )
         return
-    
+    link = a.text
     try:
         logger.info(f"3")
         print("print: 3")
@@ -62,7 +62,7 @@ async def media(client, message):
         )
         return
     
-    link = a.text
+    #link = a.text
     if  message.video:
         duration = int(b.text)
         file_id = message.video.file_id
