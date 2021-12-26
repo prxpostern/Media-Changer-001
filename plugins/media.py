@@ -33,10 +33,12 @@ async def media(client, message):
         print('no way')
 
     try:
+        print("print: 1")
         logger.info(f"1")
         a = await client.ask(message.chat.id,'Now send me the link of the message of the channnel that you need to edit',
                     filters=filters.text, timeout=30)
         logger.info(f"2")
+        print("print: 2")
     except TimeoutError:
         await message.reply_text(
             "```Session Timed Out.Resend the file to Start again```",
@@ -47,9 +49,11 @@ async def media(client, message):
     
     try:
         logger.info(f"3")
+        print("print: 3")
         b = await client.ask(message.chat.id,'Now send me Duration:',
                     filters=filters.text, timeout=30)
         logger.info(f"4")
+        print("print: 4")
     except TimeoutError:
         await message.reply_text(
             "```Session Timed Out.Resend the file to Start again```",
@@ -64,6 +68,7 @@ async def media(client, message):
         file_id = message.video.file_id
         mid = InputMediaVideo(file_id, caption=message.caption and message.caption.html, duration=duration)
         logger.info(f"5---{duration}---{file_id}")
+        print(f"print: 5---{duration}---{file_id}")
             
          
     a = "-100"
