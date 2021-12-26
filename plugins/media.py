@@ -67,8 +67,8 @@ async def media(client, message):
         duration = int(b.text)
         file_id = message.video.file_id
         mid = InputMediaVideo(file_id, caption=message.caption and message.caption.html, duration=duration)
-        logger.info(f"5---{duration}---{file_id}")
-        print(f"print: 5---{duration}---{file_id}")
+        logger.info(f"5---{mid}")
+        print(f"print: 5---{mid}")
             
          
     a = "-100"
